@@ -12,9 +12,8 @@
       box-sizing: border-box;
      
     }
-    .matrix-5x5 {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 columnas de igual tamaño */
+    .len {
+      
       background-color: firebrick;
     }
     .matrix-5x5 .box {
@@ -25,117 +24,132 @@
     
       background-color: aquamarine;
     }
-    .matriz-4x4 .box{
-      background-color: lightblue;
+    .non{
+      background-color: rgb(13, 114, 148);
     }
-    .matriz-6x6 .box{
+    .pep{
       
       background-color: blueviolet;
+    }
+    .ji{
+      background-color: rgb(134, 35, 105);
     }
   </style>
   <body>
     <h1></h1>
-    <div class="matriz-3x3">
-        <div class="grid justify-content-center align-items-center">
-          <div class="col-12 lg:col-5 box">
-            <div class="p-4 bg-primary">
+    <div class="grid matriz-3x3 justify-content-center align-items-center">
+      <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+        <div class="box">
+          5
+        </div>
+      </div>
+    </div>
+  
+      
+
+    <div class="grid matriz-4x4 align-items-center"> 
+        <div class="col-6 sm:col-6 md:col-4 lg:col-3">
+          <div class="non">
+            <div class="box">
+              3
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-6 sm:col-6 md:col-4 lg:col-3 ml-auto">
+    
+          <div class="non">
+            <div class="box">
+              4
+            </div>
+          </div>
+        </div>
+    </div>
+    
+  <h1></h1>
+    <div class="matriz-8x8">
+      <div class="grid justify-content-center align-items-center">
+       
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              1
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              2
+            </div>
+          </div>
+        </div>
+    
+        
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              3
+            </div>
+          </div>
+        </div>
+    
+        
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              4
+            </div>
+          </div>
+        </div>
+    
+        
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
               5
             </div>
           </div>
         </div>
-      </div>
-  
-    <h1></h1>
-    <div class="matriz-4x4">
+    
         
-        <div class="grid justify-content-center align-items-center">
-            <div class="col-12 sm:col-6 md:col-4 lg:col-3">
-              <div class="p-4 bg-primary box">
-                3
-              </div>
-            </div>
-      
-            
-            <div class="col-12 sm:col-12 md:col-4 lg:col-5"></div>
-      
-            
-            <div class="col-12 sm:col-6 md:col-4 lg:col-4">
-              <div class="p-4 bg-secondary text-white text-center box">
-                4
-              </div>
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              6
             </div>
           </div>
+        </div>
+    
         
-    </div>
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              7
+            </div>
+          </div>
+        </div>
     
-  
-    <h1></h1>
-     <div class="matriz-8x8">
-    <div class="grid justify-content-center align-items-center">
-      
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-primary box">
-          1
-        </div>
-      </div>
-      
-      
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-secondary box">
-          2
-        </div>
-      </div>
-
-      
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-success box">
-          3
-        </div>
-      </div>
-
-     
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-warning box">
-          4
-        </div>
-      </div>
-
-      
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-info box">
-          5
-        </div>
-      </div>
-
-      
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-dark box">
-          6
-        </div>
-      </div>
-
-      
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-primary box">
-          7
-        </div>
-      </div>
-
-    
-      <div class="col-12 sm:col-6 md:col-3 lg:col-1">
-        <div class="p-4 bg-secondary box">
-          8
+        
+        <div class="col-6 sm:col-6 md:col-2 lg:col-1">
+          <div class="len">
+            <div class="p-4 bg-primary box">
+              8
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   
     <h1></h1>
     <div class="matriz-6x6">
         <div class="grid justify-content-end">
             <div class="col-12 sm:col-6 md:col-4 lg:col-3">
-              <div class="p-4 bg-primary box">
-                3 
+              <div class="ji">
+                <div class="p-4 bg-primary box">
+                  3 
+                </div>
               </div>
             </div>
           </div>
@@ -145,23 +159,27 @@
   <h1></h1>
   <div class="matriz-7x7">
     <div class="grid">
-        <!-- Cuadro de la izquierda (2 columnas) -->
-        <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+     
+      <div class="col-6 sm:col-6 md:col-4 lg:col-1 justify-content-end">
+        <div class="pep">
           <div class="p-4 bg-primary box">
             2
           </div>
         </div>
-    
-        <!-- Espacio en el centro (opcional) para separar los cuadros -->
-        <div class="col-12 sm:col-6 md:col-4 lg:col-8"></div>
-    
-        <!-- Cuadro de la derecha (2 columnas) -->
-        <div class="col-12 sm:col-6 md:col-4 lg:col-2">
+      </div>
+  
+      
+      <div class="col-12 sm:col-12 md:col-4 lg:col-8"></div>
+  
+      
+      <div class="col-6 sm:col-6 md:col-4 lg:col-1 justify-content-end">
+        <div class="pep">
           <div class="p-4 bg-secondary box">
             2
           </div>
         </div>
       </div>
+    </div>
   </div>
   <h1></h1>
   <div class="matriz-2x2">

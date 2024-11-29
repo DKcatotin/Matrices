@@ -10,6 +10,9 @@ import { Db4Component } from './db4/db4.component';
 import { Db5Component } from './db5/db5.component';
 import { LayoutComponent } from './layout/layout.component';
 
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { LayoutComponent } from './layout/layout.component';
   imports: [
     CommonModule,
     DeberesRoutingModule,
-    RouterModule
+    RouterModule,
+    CardModule,
+    ButtonModule,
   ]
 })
 export class DeberesModule { }
