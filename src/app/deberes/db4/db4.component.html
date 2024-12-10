@@ -1,165 +1,70 @@
-<title>Flexbox Matrices Jeremy Catota</title>
-  <link rel="stylesheet" href="https://unpkg.com/primeflex@3.3.0/primeflex.css">
-  <style>
-    .box {
-      border: 1px solid #0a0a0a;
-      text-align: center;
-      font-size: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100px;
-      box-sizing: border-box;
+<div class="card">
+  <div class="buttons-row">
+   
+    <button pButton type="button" label="Formulario 1" class="p-button-primary" (click)="toggleForm(1)"></button>
+    <button pButton type="button" label="Formulario 2" class="p-button-success" (click)="toggleForm(2)"></button>
+    <button pButton type="button" label="Formulario 3" class="p-button-info" (click)="toggleForm(3)"></button>
+  </div>
+
+  
+  <div class="forms-row">
     
-    }
-    .pep{
-        background-color: #1dc217;
-    }
-    .men{
-        background-color: rgb(63, 212, 163);
-    }
-    .lom{
-        background-color: aqua;
-    }
-    .nin{
-        background-color: rgb(16, 16, 119);
-    }
-  </style>
-  <body>
-    <div class="grid justify-content-center align-items-center">
-        <div class="col-12 sm:col-12 md:col-4 lg:col-3">
-          <div class="pep">
-            <div class="p-4 bg-primary box">
-                12
-              </div>
-          </div>
+    <div *ngIf="visibleForm === 1" class="form-container">
+      <h2>Formulario 1</h2>
+      <form (ngSubmit)="onSubmit('Formulario 1')" #form1="ngForm">
+        <div class="field">
+          <label for="name1">Nombre</label>
+          <input
+            id="name1"
+            type="text"
+            pInputText
+            placeholder="Nombre"
+            [(ngModel)]="form1Data.name"
+            name="name1"
+          />
         </div>
+        <button pButton type="submit" label="Enviar" class="p-button-success"></button>
+      </form>
     </div>
-<h1></h1>
-    <div class="grid justify-content-center align-items-center">
-        <div class="col-12 sm:col-4">
-          <div class="men">
-            <div class="p-4 bg-primary box">
-                4
-            </div>
-          </div>
-        </div>
-        <div class="col-12 sm:col-4"></div>
-        <div class="col-12 sm:col-4">
-          <div class="men">
-            <div class="p-4 bg-secondary text-center box">
-                4
-            </div>
-          </div>
-        </div>
-    </div>
-<h1></h1>
-    <div>
-        <div class="grid justify-content-center align-items-center">
-            <div class="col-12 sm:col-4">
-              <div class="lom">
-                <div class="p-4 bg-primary box">
-                    4
-                  </div>
-              </div>
-            </div>
-            <div class="col-12 sm:col-2"></div>
-            <div class="col-12 sm:col-4">
-              <div class="lom">
-                <div class="p-4 bg-secondary  text-center box">
-                    4
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-<h1></h1>
-    <div>
-        <div class="grid justify-content-center align-items-center">
-            <div class="col-12 sm:col-4">
-                <div class="lom">
-                    <div class="p-4 bg-primary box">
-                        4
-                      </div>
-                  </div>
-            </div>
 
-            <div class="col-12 sm:col-2"></div>
+    
+    <div *ngIf="visibleForm === 2" class="form-container">
+      <h2>Formulario 2</h2>
+      <form (ngSubmit)="onSubmit('Formulario 2')" #form2="ngForm">
+        <div class="field">
+          <label for="email2">Correo Electrónico</label>
+          <input
+            id="email2"
+            type="email"
+            pInputText
+            placeholder="Correo"
+            [(ngModel)]="form2Data.email"
+            name="email2"
+          />
+        </div>
+        <button pButton type="submit" label="Enviar" class="p-button-success"></button>
+      </form>
+    </div>
 
-            <div class="col-12 sm:col-4">
-                <div class="lom">
-                    <div class="p-4 bg-primary box">
-                        4
-                      </div>
-                  </div>
-            </div>
-        
+   
+    <div *ngIf="visibleForm === 3" class="form-container">
+      <h2>Formulario 3</h2>
+      <form (ngSubmit)="onSubmit('Formulario 3')" #form3="ngForm">
+        <div class="field">
+          <label for="phone3">Teléfono</label>
+          <input
+            id="phone3"
+            type="tel"
+            pInputText
+            placeholder="Teléfono"
+            [(ngModel)]="form3Data.phone"
+            name="phone3"
+          />
         </div>
+        <button pButton type="submit" label="Enviar" class="p-button-success"></button>
+      </form>
     </div>
-<h1></h1>
-    <div>
-        <div class="grid justify-content-center align-items-center">
+  </div>
+</div>
 
-            
-            <div class="col-12 sm:col-4">
-                <div class="lom">
-                    <div class="p-4 bg-primary box">
-                        4
-                      </div>
-                  </div>
-            </div>
-        
-            <div class="col-12 sm:col-2"></div>
-
-            <div class="col-12 sm:col-4">
-                <div class="lom">
-                    <div class="p-4 bg-primary box">
-                        4
-                      </div>
-                  </div>
-            </div>
-        
-        </div>
-    </div>
-<h1></h1>
-    <div class="grid justify-content-center align-items-center">
-        <div class="col-12 sm:col-12 md:col-4 lg:col-3">
-          <div class="pep">
-            <div class="p-4 bg-primary box">
-                12
-              </div>
-          </div>
-        </div>
-    </div>
-<h1></h1>
-    <div class="grid justify-content-end">
-        <div class="col-12 sm:col-6">
-          <div class="nin">
-            <div class="p-4 bg-primary  box">
-                6
-              </div>
-          </div>
-        </div>
-    </div>
-<h1></h1>    
-    <div class="grid justify-content-end">
-        
-        <div class="col-12 sm:col-6">
-            <div class="nin">
-                <div class="p-4 bg-primary  box">
-                    6
-                  </div>
-              </div>
-        </div>
-    </div>
-<h1></h1>
-    <div class="grid justify-content-center">
-        
-        <div class="col-12 sm:col-10">
-          <div class="p-4 bg-primary  box">
-           10
-          </div>
-        </div>
-    </div>
-  </body>
 <a routerLink="/deberes">Volver a la lista de Deberes</a>
