@@ -1,70 +1,89 @@
-<div class="card">
-  <div class="buttons-row">
-   
-    <button pButton type="button" label="Formulario 1" class="p-button-primary" (click)="toggleForm(1)"></button>
-    <button pButton type="button" label="Formulario 2" class="p-button-success" (click)="toggleForm(2)"></button>
-    <button pButton type="button" label="Formulario 3" class="p-button-info" (click)="toggleForm(3)"></button>
-  </div>
-
-  
-  <div class="forms-row">
+<div class="p-fluid">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     
-    <div *ngIf="visibleForm === 1" class="form-container">
-      <h2>Formulario 1</h2>
-      <form (ngSubmit)="onSubmit('Formulario 1')" #form1="ngForm">
-        <div class="field">
-          <label for="name1">Nombre</label>
-          <input
-            id="name1"
-            type="text"
-            pInputText
-            placeholder="Nombre"
-            [(ngModel)]="form1Data.name"
-            name="name1"
-          />
-        </div>
-        <button pButton type="submit" label="Enviar" class="p-button-success"></button>
-      </form>
+    <div class="field">
+      <label for="inputText">Texto</label>
+      <input id="inputText" type="text" pInputText formControlName="inputText" />
     </div>
 
     
-    <div *ngIf="visibleForm === 2" class="form-container">
-      <h2>Formulario 2</h2>
-      <form (ngSubmit)="onSubmit('Formulario 2')" #form2="ngForm">
-        <div class="field">
-          <label for="email2">Correo Electrónico</label>
-          <input
-            id="email2"
-            type="email"
-            pInputText
-            placeholder="Correo"
-            [(ngModel)]="form2Data.email"
-            name="email2"
-          />
-        </div>
-        <button pButton type="submit" label="Enviar" class="p-button-success"></button>
-      </form>
+    <div class="field">
+      <label for="inputNumber">Número</label>
+      <p-inputNumber id="inputNumber" formControlName="inputNumber"></p-inputNumber>
+    </div>
+
+    
+    <div class="field">
+      <label for="dropdown">Seleccionar</label>
+      <p-dropdown 
+        id="dropdown" 
+        [options]="dropdownOptions" 
+        formControlName="dropdown" 
+        placeholder="Seleccionar"></p-dropdown>
+    </div>
+
+    
+    <div class="field">
+      <div class="field">
+        <label for="multiSelect">Seleccionar Múltiple</label>
+        <p-multiSelect 
+          id="multiSelect" 
+          [options]="dropdownOptions" 
+          formControlName="multiSelect"
+          placeholder="Selecciona una o varias opciones">
+        </p-multiSelect>
+      </div>
+
+    </div>
+    
+
+    
+    <div class="field">
+      <label for="calendar">Fecha</label>
+      <p-calendar id="calendar" formControlName="calendar"></p-calendar>
+    </div>
+
+    
+    <div class="field-checkbox">
+      <p-checkbox 
+        id="checkbox" 
+        label="Acepto los términos" 
+        formControlName="checkbox"></p-checkbox>
+    </div>
+
+    
+    <div class="field-radiobutton" *ngFor="let option of radioOptions">
+      <p-radioButton 
+        [value]="option" 
+        name="radio" 
+        formControlName="radio" 
+        [label]="option"></p-radioButton>
     </div>
 
    
-    <div *ngIf="visibleForm === 3" class="form-container">
-      <h2>Formulario 3</h2>
-      <form (ngSubmit)="onSubmit('Formulario 3')" #form3="ngForm">
-        <div class="field">
-          <label for="phone3">Teléfono</label>
-          <input
-            id="phone3"
-            type="tel"
-            pInputText
-            placeholder="Teléfono"
-            [(ngModel)]="form3Data.phone"
-            name="phone3"
-          />
-        </div>
-        <button pButton type="submit" label="Enviar" class="p-button-success"></button>
-      </form>
+    <div class="field">
+      <label for="switch">Interruptor</label>
+      <p-inputSwitch id="switch" formControlName="switch"></p-inputSwitch>
     </div>
-  </div>
+
+    
+    <div class="field">
+      <label for="textarea">Texto Largo</label>
+      <textarea id="textarea" pInputTextarea formControlName="textarea"></textarea>
+    </div>
+
+    
+    <p-fileUpload
+      name="demoFile"
+      customUpload="true"
+      (onSelect)="form.get('fileUpload')?.setValue($event.files[0])">
+    </p-fileUpload>
+
+
+    
+    <div class="field">
+      <button pButton type="submit" label="Enviar" icon="pi pi-check"></button>
+    </div>
+  </form>
 </div>
-
 <a routerLink="/deberes">Volver a la lista de Deberes</a>

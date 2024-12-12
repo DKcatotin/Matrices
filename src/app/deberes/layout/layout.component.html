@@ -5,11 +5,15 @@
   <h2>Jeremy Catota</h2>
   <h2>3° "B" Desarollo de Software</h2>
   <div class="button-container">
-    <a routerLink="/deberes/db1" class="btn btn-primary">Deber 1</a>
-    <a routerLink="/deberes/db2" class="btn btn-primary">Deber 2</a>
+    <button class="btn btn-primary" (click)="showAlert('Este es el deber 1')" routerLink="/deberes/db1">Deber 1</button>
+    <button class="btn btn-primary" (click)="showAlert('Este es el deber 2')" routerLink="/deberes/db2">Deber 2</button>
+    <button class="btn btn-primary" (click)="showAlert('Este es el deber 3')" routerLink="/deberes/db3">Deber 3</button>
+    <button class="btn btn-primary" (click)="showAlert('Este es el deber 4')" routerLink="/deberes/db4">Deber 4</button>
+    <button class="btn btn-primary" (click)="showAlert('Este es el deber 5')" routerLink="/deberes/db5">Deber 5</button>
+    <!--<a routerLink="/deberes/db2" class="btn btn-primary">Deber 2</a>
     <a routerLink="/deberes/db3" class="btn btn-primary">Deber 3</a>
     <a routerLink="/deberes/db4" class="btn btn-primary">Deber 4</a>
-    <!--<a routerLink="/deberes/db5" class="btn btn-primary">Deber 5</a>-->
+    <a routerLink="/deberes/db5" class="btn btn-primary">Deber 5</a>-->
   </div>
   <router-outlet/>
   

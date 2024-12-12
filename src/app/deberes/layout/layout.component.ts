@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
-
+  showAlert(message: string): void {
+    alert(message);
+  }
 }
