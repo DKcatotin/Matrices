@@ -1,11 +1,16 @@
-<p-card header="Card Con PrimeNG" subheader="usar una imagen y poner unos botones ">
-  <ng-template pTemplate="content">
-    <img src="https://lp-cms-production.imgix.net/2019-06/77186995.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4" alt="Descripción de la imagen" style="max-width: 100%; height: auto;">
-    mira quito que hermoso 
-  </ng-template>
-  <ng-template pTemplate="footer">
-    <button type="button" pButton label="Aceptar" class="p-button-success p-button-lg"></button>
-    <button type="button" pButton label="Cancelar" class="p-button-danger p-button-lg"></button>
-  </ng-template>
-</p-card>
-<a routerLink="/deberes">Volver a la lista de Deberes</a>
+<div class="card-container" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+  <div *ngFor="let card of cards" class="card" style="flex: 1 1 calc(33.33% - 1rem); box-sizing: border-box; max-width: 300px;">
+    <p-card [header]="card.header" [subheader]="card.subheader">
+      <ng-template pTemplate="content">
+        <img [src]="card.image" alt="Imagen de la tarjeta" style="max-width: 100%; height: auto;">
+        <p>{{ card.description }}</p>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <button type="button" pButton label="Aceptar" class="p-button-success p-button-lg"></button>
+        <button type="button" pButton label="Cancelar" class="p-button-danger p-button-lg"></button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<a routerLink="/deberes" style="display: block; text-align: center; margin-top: 1rem;">Volver a la lista de Deberes</a>
