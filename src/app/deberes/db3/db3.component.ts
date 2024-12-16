@@ -11,13 +11,13 @@ export class Db3Component {
   cards = [
     {
       header: 'Card 1',
-      subheader: 'Subheader 1',
+      subheader: '1',
       image: 'https://lp-cms-production.imgix.net/2019-06/77186995.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4',
       description: 'Mira qué hermoso paisaje 1'
     },
     {
       header: 'Card 2',
-      subheader: 'Subheader 2',
+      subheader: 'mira',
       image: 'https://lp-cms-production.imgix.net/2019-06/77186995.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4',
       description: 'Mira qué hermoso paisaje 2'
     },
