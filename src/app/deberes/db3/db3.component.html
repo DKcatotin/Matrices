@@ -1,16 +1,28 @@
 <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
   <div *ngFor="let card of cards" class="card" style="flex: 1 1 calc(33.33% - 1rem); box-sizing: border-box; max-width: 300px;">
-    <p-card [header]="card.header" [subheader]="card.subheader">
-      <ng-template pTemplate="content">
+    <div class="p-card">
+      <div class="p-card-header" style="font-size: 1.2rem; font-weight: bold;">
+        {{ card.header }}
+      </div>
+      <div class="p-card-subheader" style="font-size: 1rem; color: gray;">
+        {{ card.subheader }}
+      </div>
+      <div class="p-card-content">
         <img [src]="card.image" alt="Imagen de la tarjeta" style="max-width: 100%; height: auto;">
         <p>{{ card.description }}</p>
-      </ng-template>
-      <ng-template pTemplate="footer">
-        <button type="button" pButton label="Aceptar" class="p-button-success p-button-lg"></button>
-        <button type="button" pButton label="Cancelar" class="p-button-danger p-button-lg"></button>
-      </ng-template>
-    </p-card>
+      </div>
+      <div class="p-card-footer" style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+        <button type="button" style="background-color: #28a745; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.25rem; font-size: 1rem; cursor: pointer;">
+          Aceptar
+        </button>
+        <button type="button" style="background-color: #dc3545; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.25rem; font-size: 1rem; cursor: pointer;">
+          Cancelar
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
-<a routerLink="/deberes" style="display: block; text-align: center; margin-top: 1rem;">Volver a la lista de Deberes</a>
+<a routerLink="/deberes" style="display: block; text-align: center; margin-top: 1rem; font-size: 1rem; color: #007bff; text-decoration: none;">
+  Volver a la lista de Deberes
+</a>

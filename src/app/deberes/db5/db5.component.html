@@ -1,4 +1,52 @@
-<p-carousel [value]="images" [numVisible]="1" [circular]="true"> <ng-template let-image pTemplate="item">
-    <div style="display: flex; justify-content: center; align-items: center; height: 100%;"> <img [src]="image"
-        alt="Image" style="width: 50%;"> </div>
-  </ng-template> </p-carousel> <a routerLink="/deberes">Volver a la lista de Deberes</a>
+<p-carousel 
+  [value]="images" 
+  [numVisible]="3" 
+  [numScroll]="3" 
+  [circular]="true" 
+  [responsiveOptions]="responsiveOptions"
+  [autoplayInterval]="3000"> <!-- Intervalo de 3 segundos para autoplay -->
+
+  <ng-template let-image pTemplate="item">
+    <div class="border border-surface rounded-border m-2 p-4">
+      <div class="mb-4">
+        <div class="relative mx-auto">
+          <!-- Aquí se define la imagen de cada item del carrusel -->
+          <img [src]="image.url" style="max-width: 100%; height: auto;" />
+
+        </div>
+      </div>
+      <div class="mb-4 font-medium">
+        {{ image.name }}
+      </div>
+      <div class="flex justify-between items-center">
+        <div class="mt-0 font-semibold text-xl">
+          {{ '$' + image.price }}
+        </div>
+        <span>
+          <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+          <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+        </span>
+      </div>
+    </div>
+  </ng-template>
+
+</p-carousel>
+
+<!-- Galería -->
+<p-galleria 
+  [value]="images"
+  [responsiveOptions]="responsiveOptions"
+  [containerStyle]="{ 'max-width': '640px' }"
+  [numVisible]="5">
+
+  <ng-template pTemplate="item" let-item>
+    <div class="gallery-item">
+      <img [src]="item.url" style="width:100%" />
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="thumbnail" let-item>
+    <img [src]="item.url" />
+  </ng-template>
+</p-galleria>
+<a routerLink="/deberes">Volver a la lista de Deberes</a>

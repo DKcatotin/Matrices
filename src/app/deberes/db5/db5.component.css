@@ -4,3 +4,14 @@ p-carousel {
     margin: 0 auto;
   }
   
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .galleria-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 100vh;           /* Toma toda la altura de la ventana */
+  }
+  

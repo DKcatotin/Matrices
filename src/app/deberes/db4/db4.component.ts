@@ -1,54 +1,44 @@
-import { Component, NgModule } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-db4',
-  standalone: false,
-  
   templateUrl: './db4.component.html',
-  styleUrl: './db4.component.css',
- 
 })
-
 export class Db4Component {
   form: FormGroup;
   dropdownOptions = [
     { label: 'Opción 1', value: '1' },
     { label: 'Opción 2', value: '2' },
     { label: 'Opción 3', value: '3' },
+    { label: 'Opción 4', value: '4' },
   ];
-  radioOptions = ['Opción A', 'Opción B', 'Opción C'];
+  submitted = false;
+  selectedForm: number = 0;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {  // Inyecta HttpClient aquí
+  constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      inputText: [''],
-      inputNumber: [null],
-      dropdown: [null],
+      inputText: ['', Validators.required],
+      dropdown: [null, Validators.required],
       multiSelect: [[], Validators.required],
-      calendar: [null],
-      checkbox: [false],
-      radio: [null],
+      calendar: [null, Validators.required],
       switch: [false],
-      textarea: [''],
-      fileUpload: [null],
-      name: [''],
-      email: ['']
+      gender: ['', Validators.required],
+      checkbox: [false, Validators.requiredTrue],
     });
   }
 
-  onSubmit() {
-    console.log(this.form.value);
+  showForm(formId: number) {
+    this.selectedForm = formId;
+  }
 
-    // Ejemplo de uso de HttpClient para hacer una solicitud GET
-    this.http.get('https://api.example.com/data')
-      .subscribe(response => {
-        console.log('Respuesta de la API:', response);
-      });
+  onSubmit() {
+    if (this.form.valid) {
+      this.submitted = true;
+      // Aquí puedes manejar los datos del formulario
+      console.log(this.form.value);
+      // Luego de enviar el formulario, puedes limpiar el formulario:
+      this.form.reset();
+    }
   }
 }
-  
-
-

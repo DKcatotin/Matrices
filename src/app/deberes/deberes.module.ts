@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {  CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
@@ -25,7 +25,12 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CarouselModule } from 'primeng/carousel';
-import { withFetch } from '@angular/common/http';
+
+import { GalleriaModule } from 'primeng/galleria';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MessagesModule } from 'primeng/messages';
+import { MessageService } from 'primeng/api';
+
 
 @NgModule({
   declarations: [
@@ -58,10 +63,20 @@ import { withFetch } from '@angular/common/http';
     InputNumberModule,
     CarouselModule,
     MultiSelectModule,
+    ReactiveFormsModule,
+    GalleriaModule,
+    InputTextareaModule,
+    MessagesModule,
+    MessagesModule,
+    InputTextModule,
+    MultiSelectModule,
+    MessagesModule,
+    CalendarModule,
     
   ],
   providers: [
-    provideHttpClient(withFetch())  
+    MessageService
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DeberesModule { }

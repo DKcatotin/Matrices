@@ -1,89 +1,66 @@
 <div class="p-fluid">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    
-    <div class="field">
-      <label for="inputText">Texto</label>
-      <input id="inputText" type="text" pInputText formControlName="inputText" />
+ 
+  <div class="button-group" style="display: flex; gap: 10px; margin-bottom: 20px;">
+    <button pButton type="button" label="Formulario 1" icon="pi pi-pencil" (click)="showForm(1)"></button>
+    <button pButton type="button" label="Formulario 2" icon="pi pi-user" (click)="showForm(2)"></button>
+    <button pButton type="button" label="Formulario 3" icon="pi pi-calendar" (click)="showForm(3)"></button>
+  </div>
+
+  
+  <form *ngIf="selectedForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngIf="selectedForm === 1">
+      <div class="field">
+        <label for="inputText">Texto</label>
+        <input id="inputText" type="text" pInputText formControlName="inputText" />
+      </div>
+      <div class="field">
+        <label for="inputNumber">Número</label>
+        <input id="inputNumber" type="number" pInputText formControlName="inputNumber" />
+      </div>
     </div>
 
-    
-    <div class="field">
-      <label for="inputNumber">Número</label>
-      <p-inputNumber id="inputNumber" formControlName="inputNumber"></p-inputNumber>
+    <div *ngIf="selectedForm === 2">
+      <div class="field">
+        <label for="dropdown">Seleccionar</label>
+        <p-dropdown
+          id="dropdown"
+          [options]="dropdownOptions"
+          formControlName="dropdown"
+          placeholder="Seleccionar"
+        ></p-dropdown>
+      </div>
+      <div class="field">
+        <label for="inputEmail">Correo Electrónico</label>
+        <input id="inputEmail" type="email" pInputText formControlName="email" />
+      </div>
     </div>
 
-    
-    <div class="field">
-      <label for="dropdown">Seleccionar</label>
-      <p-dropdown 
-        id="dropdown" 
-        [options]="dropdownOptions" 
-        formControlName="dropdown" 
-        placeholder="Seleccionar"></p-dropdown>
-    </div>
-
-    
-    <div class="field">
+    <div *ngIf="selectedForm === 3">
       <div class="field">
         <label for="multiSelect">Seleccionar Múltiple</label>
-        <p-multiSelect 
-          id="multiSelect" 
-          [options]="dropdownOptions" 
+        <p-multiSelect
+          id="multiSelect"
+          [options]="dropdownOptions"
           formControlName="multiSelect"
-          placeholder="Selecciona una o varias opciones">
-        </p-multiSelect>
+          placeholder="Selecciona una o varias opciones"
+        ></p-multiSelect>
       </div>
-
-    </div>
-    
-
-    
-    <div class="field">
-      <label for="calendar">Fecha</label>
-      <p-calendar id="calendar" formControlName="calendar"></p-calendar>
+      <div class="field">
+        <label for="inputDate">Fecha</label>
+        <p-calendar id="inputDate" formControlName="date"></p-calendar>
+      </div>
     </div>
 
-    
-    <div class="field-checkbox">
-      <p-checkbox 
-        id="checkbox" 
-        label="Acepto los términos" 
-        formControlName="checkbox"></p-checkbox>
-    </div>
-
-    
-    <div class="field-radiobutton" *ngFor="let option of radioOptions">
-      <p-radioButton 
-        [value]="option" 
-        name="radio" 
-        formControlName="radio" 
-        [label]="option"></p-radioButton>
-    </div>
-
-   
-    <div class="field">
-      <label for="switch">Interruptor</label>
-      <p-inputSwitch id="switch" formControlName="switch"></p-inputSwitch>
-    </div>
-
-    
-    <div class="field">
-      <label for="textarea">Texto Largo</label>
-      <textarea id="textarea" pInputTextarea formControlName="textarea"></textarea>
-    </div>
-
-    
-    <p-fileUpload
-      name="demoFile"
-      customUpload="true"
-      (onSelect)="form.get('fileUpload')?.setValue($event.files[0])">
-    </p-fileUpload>
-
-
-    
-    <div class="field">
+    <div class="field" style="margin-top: 20px;">
       <button pButton type="submit" label="Enviar" icon="pi pi-check"></button>
     </div>
   </form>
+
+  
+  <p-message *ngIf="submitted" severity="success" text="Formulario enviado correctamente!"></p-message>
 </div>
-<a routerLink="/deberes">Volver a la lista de Deberes</a>
+
+
+<a routerLink="/deberes" style="display: block; text-align: center; margin-top: 1rem; font-size: 1rem; color: #007bff; text-decoration: none;">
+  Volver a la lista de Deberes
+</a>
